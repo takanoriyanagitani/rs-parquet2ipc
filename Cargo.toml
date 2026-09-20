@@ -3,7 +3,16 @@ name = "rs-parquet2ipc"
 version = "0.1.0"
 edition = "2024"
 
+description = "Convert Parquet files to Apache Arrow IPC format"
+license = "Apache-2.0"
+repository = "https://github.com/takanoriyanagitani/rs-parquet2ipc"
+homepage = "https://github.com/takanoriyanagitani/rs-parquet2ipc"
+documentation = "https://docs.rs/rs-parquet2ipc/latest"
+keywords = ["parquet", "arrow", "ipc", "conversion"]
+
 exclude = [
+  "sample.d/input.parquet",
+  "sample.d/input.csv",
 ]
 
 [[bin]]
