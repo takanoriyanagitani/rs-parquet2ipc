@@ -1,0 +1,57 @@
+[package]
+name = "rs-parquet2ipc"
+version = "0.1.0"
+edition = "2024"
+
+exclude = [
+]
+
+[[bin]]
+name = "parquet2ipc"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+unwrap_used = "forbid"
+expect_used = "forbid"
+panic = "forbid"
+
+[dependencies.arrow-array]
+version = "59.3.0"
+default-features = false
+features = [
+]
+
+[dependencies.arrow-schema]
+version = "59.3.0"
+default-features = false
+features = [
+]
+
+[dependencies.arrow-ipc]
+version = "59.3.0"
+default-features = false
+features = [
+]
+
+[dependencies.parquet]
+version = "59.3.0"
+default-features = false
+features = [
+  "arrow",
+  "base64",
+  "brotli",
+  "flate2-rust_backend",
+  "lz4",
+  "simdutf8",
+  "snap",
+]
+
+[features]
+default = ["pqzstd"]
+
+pqzstd = [
+  "parquet/zstd",
+  "arrow-ipc/zstd",
+]
